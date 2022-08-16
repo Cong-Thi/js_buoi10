@@ -13,11 +13,11 @@ function Member(user, name, email, password, dateOfJob, salary, regency, hour) {
 Member.prototype.total = function () {
     var currentFormat = new Intl.NumberFormat("vn-VN");
     if (this.regency == "Sếp") {
-        return currentFormat.format(((this.salary / 176 * this.hour) * 3).toFixed(0))
+        return currentFormat.format((this.salary * 3).toFixed(0))
     } else if (this.regency == "Trưởng Phòng") {
-        return currentFormat.format(((this.salary / 176 * this.hour) * 2).toFixed(0))
+        return currentFormat.format((this.salary * 2).toFixed(0))
     } else {
-        return currentFormat.format((this.salary / 176 * this.hour).toFixed(0))
+        return currentFormat.format((this.salary).toFixed(0))
     }
 }
 
